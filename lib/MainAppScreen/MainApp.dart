@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'Me_screen.dart';
 import 'home/home_screen.dart';
+import 'messages/message_main.dart';
+import 'moment/main_moment_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -11,13 +13,12 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MainScreen> {
-  int selectedIndex = 4;
+  int selectedIndex = 0;
 
   final screens = [
     HomeScreen(),
-    const Center(child: Text('Comming Soon..')),
-    const Center(child: Text('Comming Soon..')),
-    const Center(child: Text('Comming Soon..')),
+    MomentMainScreen(),
+    MessageMainScreen(),
     ProfileScreen(
       userId: '1182533',
       avatarImagePath: 'assets/images/profile_pic.png',
@@ -60,27 +61,50 @@ class _MyHomePageState extends State<MainScreen> {
 
         items: [
           BottomNavigationBarItem(
-            icon: Image.asset('assets/images/bottom_bar/home.png', width: 50,),
+            icon: AnimatedScale(
+              scale: selectedIndex == 0 ? 1.1 : 1.0,
+              duration: const Duration(milliseconds: 200),
+              child: Image.asset(
+                'assets/images/bottom_bar/home.png',
+                width: 60,
+              ),
+            ),
             label: 'Home',
           ),
-          
+
           BottomNavigationBarItem(
-            icon: Image.asset('assets/images/bottom_bar/moment.png', width: 50),
+            icon: AnimatedScale(
+              scale: selectedIndex == 1 ? 1.1 : 1.0,
+              duration: const Duration(milliseconds: 200),
+              child: Image.asset(
+                'assets/images/bottom_bar/moment.png',
+                width: 60,
+              ),
+            ),
             label: 'Moment',
           ),
-          
+
           BottomNavigationBarItem(
-            icon: Image.asset('assets/images/bottom_bar/room.png', width: 63),
-            label: 'Voice Room',
-          ),
-          
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/bottom_bar/message.png', width: 50),
+            icon: AnimatedScale(
+              scale: selectedIndex == 2 ? 1.1 : 1.0,
+              duration: const Duration(milliseconds: 200),
+              child: Image.asset(
+                'assets/images/bottom_bar/message.png',
+                width: 60,
+              ),
+            ),
             label: 'Message',
           ),
-          
+
           BottomNavigationBarItem(
-            icon: Image.asset('assets/images/bottom_bar/me.png', width: 50),
+            icon: AnimatedScale(
+              scale: selectedIndex == 3 ? 1.1 : 1.0,
+              duration: const Duration(milliseconds: 200),
+              child: Image.asset(
+                'assets/images/bottom_bar/me.png',
+                width: 55,
+              ),
+            ),
             label: 'Me',
           ),
         ],

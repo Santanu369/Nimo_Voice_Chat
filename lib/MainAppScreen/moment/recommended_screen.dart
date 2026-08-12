@@ -59,8 +59,8 @@ class SocialFeedScreen extends StatelessWidget {
                     children: [
                       // Profile image
                       ClipOval(
-                        child: Image.asset(
-                          'assets/images/profile_pic.png',
+                        child: Image.network(
+                          post.userImage,
                           width: 80,
                           height: 80,
                           fit: BoxFit.cover,

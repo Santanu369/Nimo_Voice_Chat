@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'moment_screen_navigation.dart';
+import 'online_screen.dart';
 
 /// Which of the three top tabs is active.
 enum MessageTab { moment, online}
@@ -83,7 +84,26 @@ class _MomentMainScreenState extends State<MomentMainScreen> {
                     index: _selectedTab.index,
                     children: const [
                       moment_screen_navigation(),
-                      _DiscoverScreen(),
+                      SocialFeedScreenOnline(
+                          posts:
+                          [
+                            PostItem(userName: 'userName',
+                                userImage: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D',
+                                userPost: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEuu7b9gRbMktnkCLh3TxaucPDb_cNVp3QqdPKpd6mZA&s=10',
+                                caption: 'caption',
+                                likes: 10,
+                                comments: 2,
+                                gender: 'male'),
+
+                            PostItem(userName: 'userName',
+                                userImage: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D',
+                                userPost: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEuu7b9gRbMktnkCLh3TxaucPDb_cNVp3QqdPKpd6mZA&s=10',
+                                caption: 'caption',
+                                likes: 10,
+                                comments: 2,
+                                gender: 'male'),
+                          ]
+                      ),
                     ],
                   ),
                 ),
@@ -132,8 +152,8 @@ class _TopNavBar extends StatelessWidget {
           onTap: () {},
           child: Image.asset(
             'assets/images/moment/golden_bell.png',
-            width: 42,
-            height: 42,
+            width: 35,
+            height: 35,
           ),
         ),
         const SizedBox(width: 12),
@@ -166,11 +186,11 @@ class _NavTab extends StatelessWidget {
             label,
             style: TextStyle(
               color: selected ? Colors.white : Colors.white.withOpacity(0.55),
-              fontSize: 24,
+              fontSize: 20,
               fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
             ),
           ),
-          const SizedBox(height: 6),
+          const SizedBox(height: 0),
           // White underline only for the selected tab
           Image.asset('assets/images/message/underline_decor.png',
             width: selected ? 106 : 0,)

@@ -247,21 +247,7 @@ class _MineScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Center(
       child: Text(
-        'Mine',
-        style: TextStyle(color: Colors.white, fontSize: 20),
-      ),
-    );
-  }
-}
-
-class _PopularScreen extends StatelessWidget {
-  const _PopularScreen();
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        'Popular',
+        'Coming soon...',
         style: TextStyle(color: Colors.white, fontSize: 20),
       ),
     );
@@ -275,7 +261,7 @@ class _DiscoverScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Center(
       child: Text(
-        'Discover',
+        'Coming soon...',
         style: TextStyle(color: Colors.white, fontSize: 20),
       ),
     );

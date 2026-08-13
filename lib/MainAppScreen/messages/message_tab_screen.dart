@@ -80,8 +80,8 @@ class _MessageItem extends StatelessWidget {
           // Image / placeholder
           if (showPlaceholder)
             Container(
-              width: 56,
-              height: 56,
+              width: 52,
+              height: 52,
               decoration: const BoxDecoration(
                 color: Color(0xFFD9D9D9),
                 shape: BoxShape.circle,
@@ -90,8 +90,8 @@ class _MessageItem extends StatelessWidget {
           else
             Image.asset(
               imagePath!,
-              width: 66,
-              height: 66,
+              width: 56,
+              height: 56,
               // fit: BoxFit.contain,
             ),
 
@@ -107,7 +107,7 @@ class _MessageItem extends StatelessWidget {
                   title,
                   style: const TextStyle(
                     color: Colors.white,
-                    fontSize: 22,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -120,7 +120,7 @@ class _MessageItem extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       color: Colors.white.withOpacity(0.35),
-                      fontSize: 16,
+                      fontSize: 13,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -136,7 +136,7 @@ class _MessageItem extends StatelessWidget {
             time,
             style: TextStyle(
               color: Colors.white.withOpacity(0.35),
-              fontSize: 15,
+              fontSize: 12,
               fontWeight: FontWeight.w600,
             ),
           ),

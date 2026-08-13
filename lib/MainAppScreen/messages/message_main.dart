@@ -111,7 +111,7 @@ class _TopNavBar extends StatelessWidget {
       children: [
         // Nav tabs: Mine / Popular / Discover
         SizedBox(
-          width: 300,
+          width: 270,
           child: Row(
             children: [
               _NavTab(
@@ -178,11 +178,11 @@ class _NavTab extends StatelessWidget {
             label,
             style: TextStyle(
               color: selected ? Colors.white : Colors.white.withOpacity(0.55),
-              fontSize: 24,
+              fontSize: 20,
               fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
             ),
           ),
-          const SizedBox(height: 6),
+          const SizedBox(height: 0),
           // White underline only for the selected tab
           Image.asset('assets/images/message/underline_decor.png',
               width: selected ? 106 : 0,)

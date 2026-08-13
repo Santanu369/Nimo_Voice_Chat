@@ -75,7 +75,7 @@ class PopularScreen extends StatelessWidget {
     ),
   ];
   final List<CountryItem> countries = const [
-    const CountryItem(code: '1', flagImageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT9jy7_mlARVy1h-jjPb2q-yARVUxFM6U4Bc9SKyHRhg&s=10',),
+    const CountryItem(code: '1', flagImageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Flag_of_Bhutan.svg/1920px-Flag_of_Bhutan.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20260331172016',),
     const CountryItem(code: '1', flagImageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT9jy7_mlARVy1h-jjPb2q-yARVUxFM6U4Bc9SKyHRhg&s=10',),
     const CountryItem(code: '1', flagImageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT9jy7_mlARVy1h-jjPb2q-yARVUxFM6U4Bc9SKyHRhg&s=10',),
     const CountryItem(code: '1', flagImageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT9jy7_mlARVy1h-jjPb2q-yARVUxFM6U4Bc9SKyHRhg&s=10',),
@@ -188,7 +188,7 @@ class PopularScreen extends StatelessWidget {
 
                             return SizedBox(
                               width: 50,
-                              height: 20,
+                              height: 30,
                               child: _FlagChip(item: country),
                             );
                           },
@@ -295,23 +295,22 @@ class _FireButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Container(
-        width: 44,
-        height: 44,
-        decoration: BoxDecoration(
-          gradient: const LinearGradient(
-            colors: [Color(0xFFE5397A), Color(0xFF5B3FE0)],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-          shape: BoxShape.circle,
-          border: Border.all(color: Colors.white24, width: 1.5),
-        ),
-        alignment: Alignment.center,
-        child: const Icon(
-          Icons.local_fire_department,
-          color: Colors.white,
-          size: 22,
+      child: SizedBox(
+        width: 104,
+        height: 84,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            // Background image
+            Image.asset(
+              'assets/images/home/popular/fire_bg.png',
+              height: 54,
+              fit: BoxFit.contain,
+            ),
+
+            // Fire button on top
+            Icon( Icons.local_fire_department, color: Colors.white, size: 22, )
+          ],
         ),
       ),
     );
@@ -326,14 +325,18 @@ class _FlagChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(10),
+      borderRadius: BorderRadius.circular(9),
       child: Container(
-        width: 44,
-        height: 34,
-        color: Colors.white10,
-        child: Image.network(
-          item.flagImageUrl,
-          fit: BoxFit.cover,
+        width: 70,
+        height: 25,
+        color: const Color(0xFF6E00B3).withValues(alpha: 0.35),
+        child: Center(
+          child: Image.network(
+            item.flagImageUrl,
+            width: 40,
+            height: 20,
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );

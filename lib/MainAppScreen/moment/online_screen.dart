@@ -20,10 +20,10 @@ class PostItem {
   });
 }
 
-class SocialFeedScreen extends StatelessWidget {
+class SocialFeedScreenOnline extends StatelessWidget {
   final List<PostItem> posts;
 
-  const SocialFeedScreen({
+  const SocialFeedScreenOnline({
     super.key,
     required this.posts,
   });
@@ -64,33 +64,6 @@ class SocialFeedScreen extends StatelessWidget {
                           width: 80,
                           height: 80,
                           fit: BoxFit.cover,
-                          loadingBuilder: (context, child, loadingProgress) {
-                            if (loadingProgress == null) {
-                              return child;
-                            }
-
-                            return const SizedBox(
-                              width: 80,
-                              height: 80,
-                              child: Center(
-                                child: CircularProgressIndicator(),
-                              ),
-                            );
-                          },
-                          errorBuilder: (context, error, stackTrace) {
-                            debugPrint('IMAGE ERROR: $error');
-                            debugPrint('IMAGE URL: ${post.userImage}');
-
-                            return Container(
-                              width: 80,
-                              height: 80,
-                              color: Colors.red,
-                              child: const Icon(
-                                Icons.error,
-                                color: Colors.white,
-                              ),
-                            );
-                          },
                         ),
                       ),
 

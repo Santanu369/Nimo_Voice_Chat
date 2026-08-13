@@ -61,48 +61,77 @@ class _MyHomePageState extends State<MainScreen> {
 
         items: [
           BottomNavigationBarItem(
-            icon: AnimatedScale(
-              scale: selectedIndex == 0 ? 1.1 : 1.0,
-              duration: const Duration(milliseconds: 200),
-              child: Image.asset(
-                'assets/images/bottom_bar/home.png',
-                width: 60,
+            icon: SizedBox(
+              height: 50,
+              child: Center(
+                child: AnimatedScale(
+                  scale: selectedIndex == 0 ? 1.1 : 1.0,
+                  duration: const Duration(milliseconds: 200),
+                  child: Image.asset(
+                    'assets/images/bottom_bar/home.png',
+                    width: 65,
+                  ),
+                ),
               ),
             ),
             label: 'Home',
           ),
 
           BottomNavigationBarItem(
-            icon: AnimatedScale(
-              scale: selectedIndex == 1 ? 1.1 : 1.0,
-              duration: const Duration(milliseconds: 200),
-              child: Image.asset(
-                'assets/images/bottom_bar/moment.png',
-                width: 60,
+            icon: SizedBox(
+              height: 50,
+              child: Center(
+                child: AnimatedScale(
+                  scale: selectedIndex == 1 ? 1.1 : 1.0,
+                  duration: const Duration(milliseconds: 200),
+                  child: Image.asset(
+                    'assets/images/bottom_bar/moment.png',
+                    width: 75,
+                  ),
+                ),
               ),
             ),
             label: 'Moment',
           ),
 
           BottomNavigationBarItem(
-            icon: AnimatedScale(
-              scale: selectedIndex == 2 ? 1.1 : 1.0,
-              duration: const Duration(milliseconds: 200),
-              child: Image.asset(
-                'assets/images/bottom_bar/message.png',
-                width: 60,
+            icon: SizedBox(
+              height: 50,
+              child: Center(
+                child: AnimatedScale(
+                  scale: selectedIndex == 2 ? 1.1 : 1.0,
+                  duration: const Duration(milliseconds: 200),
+                  child: Image.asset(
+                    'assets/images/bottom_bar/message.png',
+                    width: 60,
+                  ),
+                ),
               ),
             ),
             label: 'Message',
           ),
 
           BottomNavigationBarItem(
-            icon: AnimatedScale(
-              scale: selectedIndex == 3 ? 1.1 : 1.0,
-              duration: const Duration(milliseconds: 200),
-              child: Image.asset(
-                'assets/images/bottom_bar/me.png',
-                width: 55,
+            icon: SizedBox(
+              height: 50,
+              child: Center(
+                child: AnimatedScale(
+                  scale: selectedIndex == 3 ? 1.1 : 1.0,
+                  duration: const Duration(milliseconds: 200),
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/images/bottom_bar/me_ring_bg.png',
+                        width: 50,
+                      ),
+                      Image.asset(
+                        'assets/images/bottom_bar/me.png',
+                        width: 35,
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
             label: 'Me',
